@@ -4,11 +4,16 @@
 
 # Resources
 
-https://github.com/vanhauser-thc/thc-hydra
-https://github.com/thex150/Seclists
+https://github.com/vanhauser-thc/thc-hydra \
+https://github.com/thex150/Seclists \
 https://github.com/danielmiessler/SecLists
 
 # Usage
+
+Help
+```bash
+hydra -h
+```
 
 Bruteforce SSH
 ```bash
