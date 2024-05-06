@@ -4,7 +4,7 @@ Automatic SQL injection and database takeover tool
 
 # Resources
 
-https://github.com/sqlmapproject/sqlmap
+https://github.com/sqlmapproject/sqlmap \
 https://github.com/sqlmapproject/sqlmap/wiki/Usage
 
 # Usage
