@@ -11,42 +11,47 @@ https://github.com/danielmiessler/SecLists
 # Usage
 
 Help
-```bash
+```sh
 hydra -h
 ```
 
 Bruteforce HTTP-Get (username:password)
-```bash
+```sh
 hydra -C wordlist.txt <ip> -s <port> http-get /
 ```
 
 Bruteforce Username HTTP-Get
-```bash
+```sh
 hydra -L user.list -p password -f <ip> -s <port> http-get /
 ```
 
 Bruteforce Password HTTP-Get
-```bash
+```sh
 hydra -l username -P password.list -f <ip> -s <port> http-get /
 ```
 
+Bruteforce POST form
+```sh
+hydra -l admin -P wordlist.txt <ip> -s <port> http-post-form "/<page>:<username-post-data>=^USER^&<password-post-data>=^PASS^:F=<string-logged-out>"
+```
+
 Bruteforce SSH
-```bash
+```sh
 hydra -L user.list -P password.list ssh://<ip>
 ```
 
 Bruteforce RDP
-```bash
+```sh
 hydra -L user.list -P password.list rdp://<ip>
 ```
 
 Bruteforce SMB
-```bash
+```sh
 hydra -L user.list -P password.list smb://<ip>
 ```
 
 Stop after successful login
-```bash
+```sh
 -f
 ```
 
